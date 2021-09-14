@@ -1,0 +1,4 @@
+mongodb+srv://manh:835107kl@cluster0.yon5y.mongodb.net/test
+mongodb+srv://manh:835107kl@cluster0.yon5y.mongodb.net/<dbname>?retryWrites=true&w=majority
+
+https://husteduvn-my.sharepoint.com/:w:/g/personal/linh_htd182039_sis_hust_edu_vn/EZbziTCexHpJmV_ZKbL0-4oBFI9GOWihgpVfv8lPy-tpYA?rtime=GeBjYBjh2Eg

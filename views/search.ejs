@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <title>Message</title>
+    <link rel="stylesheet" type="text/css" href="/public/CSS/message_list.css">
+    <%- include('header') -%>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket=io();
+
+    </script>
+  </head>
+  <body>
+    <%- include('navbar') -%>
+   
+  <%if (result){%>
+  <div  class="container mt-3 mb-4">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="user-dashboard-info-box table-responsive  mb-0 bg-white p-4 shadow-sm">
+          <table class="table ">
+            <thead>
+              <tr>
+                <th>User Name</th>
+                <th class="text-center"></th>
+                <th class="action text-center">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr class="candidates-list">
+                <td class="title">
+                  <div class="thumb">
+                    <img class="img-fluid" src="/public/image/avatar/<%=userFound.avatar%>" alt="Not find">
+                  </div>
+                  <div class="candidate-list-details">
+                    <div class="candidate-list-info">
+                      <div class="candidate-list-title">
+                       
+                        <h5 class="mb-0"><a href="/profile/<%=userFound.name%>"><%=userFound.name %></a>  </h5>
+                       
+           
+                        
+                      </div>
+                      <div class="candidate-list-option">
+                        <ul class="list-unstyled">
+                          <li><i class="fas fa-filter pr-1"></i><%=userFound.company%></li>
+                          <li><i class="fas fa-map-marker-alt pr-1"></i><%=userFound.address%></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="candidate-list-favourite-time text-center">
+                
+                </td>
+                <td style="text-align: center;">
+                  <a href="/send_message/<%=userSession.name%>/<%=userFound.name%>" style="align-items: center;"><i class="fab fa-facebook-messenger" style="font-size: 40px;"></i></a>
+                </td>
+              </tr>
+            
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+</div>
+<% }else{%>
+<div  class="container mt-3 mb-4">
+    
+
+    <h1>Chúng tôi không tìm thấy kết quả nào</h1>
+    <h3>Đảm bảo tất cả các từ đều đúng chính tả hoặc thử từ khóa khác.</h3>
+</div>
+<% } %>
+</body>
+</html>
